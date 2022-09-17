@@ -31,12 +31,14 @@ import {MatCardModule} from '@angular/material/card';
 //Obs: Esse foi criado e anotado via linha de comando pelo terminal, caso a criação dos componentes
 //sejam realizados de modo manual, tem que anotar os imports e NgModule.
 import { NavComponent } from './components/nav/nav.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
