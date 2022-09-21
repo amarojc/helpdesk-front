@@ -18,8 +18,7 @@ export class LoginComponent implements OnInit {
   email = new FormControl(null, Validators.email);
   //Valida se o valor digitado é maior que 3 caracteres, caso menor fica invalida.
   senha = new FormControl(null, Validators.minLength(3));
-
-  
+    
   constructor() { }
 
   ngOnInit(): void {
