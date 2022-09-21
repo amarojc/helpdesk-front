@@ -1,6 +1,7 @@
 import { Credenciais } from './../../models/credenciais';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -19,9 +20,14 @@ export class LoginComponent implements OnInit {
   //Valida se o valor digitado é maior que 3 caracteres, caso menor fica invalida.
   senha = new FormControl(null, Validators.minLength(3));
     
-  constructor() { }
+  constructor(private toast: ToastrService) { }
 
   ngOnInit(): void {
+  }
+
+  logar(){
+    this.toast.error('Usuário e/ou senha inválidos','Login');
+    this.creds.senha = '';
   }
 
   validaCampos(): boolean{
