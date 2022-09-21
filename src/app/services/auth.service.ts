@@ -1,0 +1,42 @@
+import { API_CONFIG } from './../config/api.config';
+import { HttpClient } from '@angular/common/http';
+import { Credenciais } from './../models/credenciais';
+import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  
+  jwtService: JwtHelperService = new JwtHelperService();
+
+  constructor(private http: HttpClient) { }
+
+  //retorno a url login, passando como paramentro os creds (email e senha)
+  //Observando o response, do tipo text devido o tipo do token ser uma string.
+  authenticate(creds: Credenciais){
+      return this.http.post(`${API_CONFIG.baseUrl}/login`, creds, {
+        observe: 'response',
+        responseType: 'text'
+      })
+  }
+
+  //Caso login bem sucedido armazeno o token no localStorage do navegador
+  successfulLogin(authToken: string){
+    localStorage.setItem('token', authToken);
+  }
+
+  //Esta autenticado ou não
+  isAuthenticated(){
+    //Pego o token do localStorage
+    let token = localStorage.getItem('token')
+    //verifico se o token é valido
+    if(token != null){
+      //verifica se o token está expirado ou não
+      //Negação para inverter o boolean retornando um true
+      return !this.jwtService.isTokenExpired(token);
+    }
+    return false;
+  }
+}

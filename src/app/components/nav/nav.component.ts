@@ -1,3 +1,5 @@
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -11,7 +13,8 @@ export class NavComponent implements OnInit {
   //Utilizado quando um componente for construido
   //Router permite navegar entre os componentes
   //Inicializa o projeto na página home
-  constructor(private router: Router) { }
+  constructor(private router: Router, private toast: ToastrService,
+    private service: AuthService) { }
 
   //Construtor utilizado sempre que precisar inicializar o componente.
   //Ou renderizar outro componente na tela.
@@ -19,5 +22,12 @@ export class NavComponent implements OnInit {
     //Navegar para home apartir do ponte em que se encontra
     this.router.navigate(['tecnicos'])
   }
+  
+ /*
+  logout(){
+      localStorage.clear();
+      this.router.navigate(['login']);
+  }
+  */
 
 }
