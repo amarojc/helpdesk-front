@@ -13,7 +13,9 @@ export class NavComponent implements OnInit {
   //Utilizado quando um componente for construido
   //Router permite navegar entre os componentes
   //Inicializa o projeto na página home
-  constructor(private router: Router, private toast: ToastrService,
+  constructor(
+    private router: Router, 
+    private toast: ToastrService,
     private service: AuthService) { }
 
   //Construtor utilizado sempre que precisar inicializar o componente.
@@ -23,11 +25,11 @@ export class NavComponent implements OnInit {
     this.router.navigate(['tecnicos'])
   }
   
- /*
+ 
   logout(){
-      localStorage.clear();
-      this.router.navigate(['login']);
+      this.service.logout(),
+      this.router.navigate(['login']),
+      this.toast.info('Logout realizado com sucesso!', 'Logout', {timeOut: 8000});
   }
-  */
 
 }
