@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tecnico-create.component.css']
 })
 export class TecnicoCreateComponent implements OnInit {
+  hide: any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  create(){
+
+  }
+}
+
+export class FormFieldPrefixSuffix {
+  hide = true;
 }
