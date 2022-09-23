@@ -18,3 +18,12 @@ h1{
     text-align: center;
    /* margin-bottom: 2rem;*/
 }
+
+.edit{
+    color:rgb(7, 136, 211)
+}
+
+.delete{
+    margin-left: 1rem;
+    color:rgb(243, 119, 110)
+}
