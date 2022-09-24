@@ -40,8 +40,6 @@ export class TecnicoCreateComponent implements OnInit {
         this.toast.success('Técnico cadastrado com sucesso', 'Cadastro');
         this.router.navigate(['tecnicos']);
       }, ex => {
-        console.log(ex);
-        
         //Primeiro verificar se existe um array de errors e após se existe apenas 1 error.
         if(ex.error.erros){
           ex.error.erros.forEach(element => {
