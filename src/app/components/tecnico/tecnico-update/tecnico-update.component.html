@@ -3,16 +3,18 @@
         <h1 class="fullWidth">Atualizar Técnico</h1>
         <img class="fullWidth" src="assets/img/tecnico-create.svg" alt="Help Desk - JSA Developer">
 
-        <section class="section">
+        <section class="section" >
+            
             <mat-checkbox (click)="addPerfil(0)"  class="margin" color="primary">Admin</mat-checkbox>
             <mat-checkbox (click)="addPerfil(1)" [checked]="true" class="margin" color="primary">Cliente</mat-checkbox>
-            <mat-checkbox (click)="addPerfil(2)" class="margin" color="primary">Técnico</mat-checkbox>
+            <mat-checkbox (click)="addPerfil(2)"  class="margin" color="primary">Técnico</mat-checkbox>
         </section>
 
         <mat-form-field class="fullWidth" appearance="legacy">
+           
             <mat-label>Nome</mat-label>
             <input   [formControl]="nome" name="nome" 
-                [(ngModel)]="tecnico.nome" [maxLength]="50"
+               [maxLength]="50" [(ngModel)]="tecnico.nome" 
                 required matInput placeholder="Ex: Fulano de tal">
             <mat-icon matSuffix></mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->

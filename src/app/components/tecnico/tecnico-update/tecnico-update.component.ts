@@ -1,9 +1,9 @@
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Tecnico } from './../../../models/tecnico';
 import { TecnicoService } from './../../../services/tecnico.service';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, enableProdMode } from '@angular/core';
 
 @Component({
   selector: 'app-tecnico-update',
@@ -28,6 +28,7 @@ export class TecnicoUpdateComponent implements OnInit {
   email: FormControl = new FormControl(null, Validators.email);
   senha: FormControl = new FormControl(null, Validators.minLength(3));
 
+
   constructor(
     private service: TecnicoService,
     private toast: ToastrService,
@@ -42,9 +43,9 @@ export class TecnicoUpdateComponent implements OnInit {
 
   findById(): void{
     this.service.findById(this.tecnico.id).subscribe(resposta =>{
-      resposta.perfis = [];
+       resposta.perfis = []
       this.tecnico = resposta;
-    })
+    });
   }
   update(){
     this.service.update(this.tecnico).subscribe(resposta => {
@@ -63,13 +64,18 @@ export class TecnicoUpdateComponent implements OnInit {
   }
 
   addPerfil(perfil: any): void{
+    console.log(perfil)
+    console.log(this.tecnico.perfis);
+
     if(this.tecnico.perfis.includes(perfil)){
       this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1);
     }else{
       this.tecnico.perfis.push(perfil);
     }
+    
   }
 
+  
   validaCampos(): boolean{
     return this.nome.valid 
         && this.cpf.valid
