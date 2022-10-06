@@ -43,7 +43,7 @@ export class TecnicoUpdateComponent implements OnInit {
 
   findById(): void{
     this.service.findById(this.tecnico.id).subscribe(resposta =>{
-       resposta.perfis = []
+       resposta.perfis = [];
       this.tecnico = resposta;
     });
   }
@@ -64,15 +64,11 @@ export class TecnicoUpdateComponent implements OnInit {
   }
 
   addPerfil(perfil: any): void{
-    console.log(perfil)
-    console.log(this.tecnico.perfis);
-
     if(this.tecnico.perfis.includes(perfil)){
       this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1);
     }else{
       this.tecnico.perfis.push(perfil);
     }
-    
   }
 
   
