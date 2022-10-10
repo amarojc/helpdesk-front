@@ -48,7 +48,7 @@ export class TecnicoDeleteComponent implements OnInit {
     }, ex => {
         //Primeiro verifico se existe um array dde erros e após se consta apenas um erro.
         if(ex.error.erros){
-          ex.error.erros.array.forEach(element => {
+          ex.error.erros.forEach(element => {
             this.toast.error(element.message);          
           });
         }else{
