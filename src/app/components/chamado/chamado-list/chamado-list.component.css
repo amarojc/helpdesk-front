@@ -31,3 +31,7 @@ mat-radio-group{
     justify-content: space-around;
     margin: 1rem;
 }
+
+.visibility{
+    margin-left: 1rem;
+}

@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { ChamadoService } from './../../../services/chamado.service';
 import { Chamado } from './../../../models/chamado';
 import { Component, OnInit } from '@angular/core';
 
@@ -22,9 +25,18 @@ export class ChamadoCreateComponent implements OnInit {
     nomeTecnico:      ''
   }
 
-  constructor() { }
+  constructor(
+    private service: ChamadoService,
+    private toast: ToastrService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  /*
+  findById(id: any): Chamado{
+    
+  }
+  */
 }
