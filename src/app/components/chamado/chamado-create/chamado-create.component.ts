@@ -1,3 +1,4 @@
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ChamadoService } from './../../../services/chamado.service';
@@ -25,6 +26,14 @@ export class ChamadoCreateComponent implements OnInit {
     nomeTecnico:      ''
   }
 
+    hide: any;
+    titulo: FormControl = new FormControl(null, Validators.minLength(5));
+    descricao:  FormControl = new FormControl(null, Validators.maxLength(255));
+    tecnico:    FormControl = new FormControl(null, Validators.required);
+    cliente:    FormControl = new FormControl(null, Validators.required);
+    prioridade:     FormControl = new FormControl(null, Validators.required);
+    status:         FormControl = new FormControl(null, Validators.required);
+    
   constructor(
     private service: ChamadoService,
     private toast: ToastrService,
@@ -39,4 +48,12 @@ export class ChamadoCreateComponent implements OnInit {
     
   }
   */
+
+  validaCampos(): boolean{
+    return  this.titulo.valid
+            && this.descricao.valid
+            && this.tecnico.valid
+            && this.prioridade.valid
+            && this.status.valid
+    }
 }
