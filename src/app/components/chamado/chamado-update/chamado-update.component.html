@@ -13,7 +13,7 @@
 
     <div class="status-prioridade">
         <mat-form-field appearance="outline">
-            <mat-label>{{retornaStatus(chamado.status)}}</mat-label>
+            <mat-label>STATUS ({{retornaStatus(chamado.status)}})</mat-label>
             <mat-select [formControl]="status" required 
                 name="status" [(ngModel)]="chamado.status">
                 <mat-option value="0">ABERTO</mat-option>
@@ -23,7 +23,7 @@
         </mat-form-field>
     
         <mat-form-field appearance="outline">
-            <mat-label>{{retornaPrioridade(chamado.prioridade)}}</mat-label>
+            <mat-label>PRIORIDADE ({{retornaPrioridade(chamado.prioridade)}})</mat-label>
             <mat-select [formControl]="prioridade" required
                 name="prioridade" [(ngModel)]="chamado.prioridade">
                 <mat-option value="0">BAIXA</mat-option>
@@ -35,7 +35,7 @@
 
     <div class="tecnico">
         <mat-form-field class="full-width" appearance="outline">
-            <mat-label >{{chamado.nomeTecnico}}</mat-label>
+            <mat-label >TÉCNICO ({{chamado.nomeTecnico}})</mat-label>
             <mat-select [formControl]="tecnico" required 
                 name="tecnico" [(ngModel)]="chamado.tecnico">
                 <mat-option *ngFor="let tec of tecnicos" value="{{tec.id}}">{{tec.nome}}</mat-option>
@@ -45,7 +45,7 @@
 
     <div class="cliente">
         <mat-form-field class="full-width" appearance="outline">
-            <mat-label>{{chamado.nomeCliente}}</mat-label>
+            <mat-label>CLIENTE ({{chamado.nomeCliente}})</mat-label>
             <mat-select [formControl]="cliente" required 
                name="cliente" [(ngModel)]="chamado.cliente">
                 <mat-option  *ngFor="let cli of clientes"  value="{{cli.id}}" >{{cli.nome}}</mat-option>
@@ -63,7 +63,7 @@
     </form>
 
     <button (click)="update()" [disabled]="!validaCampos()" class="full-width mat-elevation-z8" mat-raised-button color="primary">Atualizar</button>
-    <button routerLink="/chamados" class="full-width mat-elevation-z8" mat-stroked-button color="warn">Cancelar</button>
+    <button routerLink="../../" class="full-width mat-elevation-z8" mat-stroked-button color="warn">Cancelar</button>
 
     <p class="full-width">Desenvolvido por Jorge Amaro</p>
 
