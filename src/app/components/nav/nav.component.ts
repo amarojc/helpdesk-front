@@ -22,7 +22,7 @@ export class NavComponent implements OnInit {
   //Ou renderizar outro componente na tela.
   ngOnInit(): void {
     //Navegar para home apartir do ponte em que se encontra
-    this.router.navigate(['chamados/create'])
+    this.router.navigate(['chamados'])
   }
   
  

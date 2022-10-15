@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ChamadoService {
-
+ 
   constructor(private http: HttpClient) { }
 
   
@@ -21,9 +21,10 @@ export class ChamadoService {
   }
 
   create(chamado: Chamado): Observable<Chamado>{
-    console.log(chamado);
-    
     return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/chamados`, chamado);
   }
  
+  update(chamado: Chamado): Observable<Chamado> {
+    return this.http.put<Chamado>(`${API_CONFIG.baseUrl}/chamados`, chamado);
+  }
 }
