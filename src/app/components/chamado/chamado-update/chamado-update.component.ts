@@ -41,7 +41,7 @@ export class ChamadoUpdateComponent implements OnInit {
     private tecnicoService: TecnicoService,
     private clienteService: ClienteService,
     private chamadoService: ChamadoService,
-    private toast: ToastrService,
+    private toastService: ToastrService,
     private router: Router,
     private actRoute: ActivatedRoute
   ) { }
@@ -57,20 +57,22 @@ export class ChamadoUpdateComponent implements OnInit {
   findById(): void{
     this.chamadoService.findById(this.chamado.id).subscribe(resposta => {
       this.chamado = resposta;
+    }, ex =>{
+      this.toastService.error(ex.error.error);
     })
   }
 
-  findUpdate(){
+  update(){
     this.chamadoService.update(this.chamado).subscribe(() => {
-      this.toast.success('Chamado atualizado com sucesso!', 'Atualizar');
+      this.toastService.success('Chamado atualizado com sucesso!', 'Atualizar');
       this.router.navigate(['chamados'])
     }, ex => {
       if(ex.error.erros){
         ex.error.erros.forEach(element => {
-          this.toast.error(element.message);
+          this.toastService.error(element.message);
         });
       }else{
-        this.toast.error(ex.error.message);
+        this.toastService.error(ex.error.message);
       }
     })
   }
@@ -86,4 +88,22 @@ export class ChamadoUpdateComponent implements OnInit {
       this.clientes = resposta;  
     })
   }
+
+  validaCampos(): boolean{
+    return this.titulo.valid
+        && this.status.valid
+        && this.prioridade.valid
+        && this.observacoes.valid
+        && this.tecnico.valid
+        && this.cliente.valid
+  }
+
+  retornaStatus(status: any): string{
+    return (status == '0' ? 'ABERTO' : status == '1' ? 'EM ANDAMENTO' : 'FECHADO');
+  }
+
+  retornaPrioridade(prioridade: any): string{
+    return (prioridade == '0' ? 'BAIXA' : prioridade == '1' ? 'MÉDIA' : 'ALTA');
+  }
+
 }

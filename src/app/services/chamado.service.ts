@@ -25,6 +25,6 @@ export class ChamadoService {
   }
  
   update(chamado: Chamado): Observable<Chamado> {
-    return this.http.put<Chamado>(`${API_CONFIG.baseUrl}/chamados`, chamado);
+    return this.http.put<Chamado>(`${API_CONFIG.baseUrl}/chamados/${chamado.id}`, chamado);
   }
 }
