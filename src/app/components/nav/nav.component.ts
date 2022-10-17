@@ -22,14 +22,14 @@ export class NavComponent implements OnInit {
   //Ou renderizar outro componente na tela.
   ngOnInit(): void {
     //Navegar para home apartir do ponte em que se encontra
-    this.router.navigate(['chamados'])
+    this.router.navigate(['home'])
   }
   
  
   logout(){
       this.service.logout(),
       this.router.navigate(['login']),
-      this.toast.info('Logout realizado com sucesso!', 'Logout', {timeOut: 8000});
+      this.toast.info('Logout realizado com sucesso!', 'Logout', {timeOut: 4000});
   }
 
 }
