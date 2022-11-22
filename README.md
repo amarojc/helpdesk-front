@@ -1,27 +1,34 @@
-# Helpdesk
+# helpdesk-front-end
+> Esse é um sistema para gerenciamento de chamados simulando um simples Help Desk.
+![Login](https://github.com/amarojc/helpdesk-front/blob/master/src/assets/img/helpdesk-login.png)
+## Tecnologias utilizadas
+* Este projeto foi gerado com Angular CLI versão 12.0.3.
+* Arquitetura MVC do Angular
+* Componentes visuais do Angular Material 
+* Angular reactive forms
+* Typescript
+* HTML5 e CSS3
+* Autenticação e Autorização
+* Rotas no Angular
+* Toast para interagir com usuário
+* Deploy na [Vercel](https://vercel.com/)
+#### Acesse o backend do projeto aqui no github: [Helpdesk Front-end](https://github.com/amarojc/helpdesk-backend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
+### Acesse o app: [https://helpdesk-front-ecru.vercel.app]
+	** Login:amaro@mail.com
+	** senha: 123
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Algumas telas do app
+>
+#### Home
+![Home](https://github.com/amarojc/helpdesk-front/blob/master/src/assets/img/home.png)
+#### Chamados
+![Chamados](https://github.com/amarojc/helpdesk-front/blob/master/src/assets/img/helpdesk-chamados.png)
+#### Atualizar um chamado
+![Atualizar-chamado](https://github.com/amarojc/helpdesk-front/blob/master/src/assets/img/helpdesk-chamado-atualiza.png)
+#### Técnicos
+![Tecnicos](https://github.com/amarojc/helpdesk-front/blob/master/src/assets/img/helpdesk-tecnicos.png)
+#### Novo Técnico
+![NewTecnico](https://github.com/amarojc/helpdesk-front/blob/master/src/assets/img/helpdesk-cad-tecnico.png)
+#### Excluir Técnico
+![DelTecnicos](https://github.com/amarojc/helpdesk-front/blob/master/src/assets/img/helpdesk-del-tecnico.png)
