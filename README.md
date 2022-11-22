@@ -12,9 +12,10 @@
 * Rotas no Angular
 * Toast para interagir com usuário
 * Deploy na [Vercel](https://vercel.com/)
-#### Acesse o backend do projeto aqui no github: [Helpdesk Front-end](https://github.com/amarojc/helpdesk-backend)
+>
+#### Acesse o backend do projeto aqui no github: [Helpdesk Back-end](https://github.com/amarojc/helpdesk-backend)
 
-### Acesse o app: [https://helpdesk-front-ecru.vercel.app]
+#### Teste o app: [https://helpdesk-front-ecru.vercel.app](https://helpdesk-front-ecru.vercel.app)
 	** Login:amaro@mail.com
 	** senha: 123
 
