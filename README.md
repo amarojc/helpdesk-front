@@ -1,7 +1,15 @@
-# helpdesk-front-end
-> Esse é um sistema para gerenciamento de chamados simulando um simples Help Desk.
+# Projeto Help Desk front-end
 ![Login](https://github.com/amarojc/helpdesk-front/blob/master/src/assets/img/helpdesk-login.png)
-## Tecnologias utilizadas
+
+# Sobre o projeto
+Helpdesk é uma aplicação full stack web utilizando Spring boot (backend) e Angular CLI 12.0.3 (frontend).
+
+A aplicação consiste em realizar o cadastro de técnicos e clientes para o gerenciamento de chamados simulando um simples Help Desk.
+
+# Modelo conceitual
+![DC_HELPDESK](https://github.com/amarojc/helpdesk-front/blob/master/src/assets/img/DC_Helpdesk.png)
+
+# Tecnologias utilizadas
 * Este projeto foi gerado com Angular CLI versão 12.0.3.
 * Arquitetura MVC do Angular
 * Componentes visuais do Angular Material 
@@ -11,13 +19,19 @@
 * Autenticação e Autorização
 * Rotas no Angular
 * Toast para interagir com usuário
-* Deploy na [Vercel](https://vercel.com/)
+
+## Implantação em produção
+* [Vercel](https://vercel.com/amarojc/helpdesk-front)
+
 >
 #### Acesse o backend do projeto aqui no github: [Helpdesk Back-end](https://github.com/amarojc/helpdesk-backend)
 
 #### Teste o app: [https://helpdesk-front-ecru.vercel.app](https://helpdesk-front-ecru.vercel.app)
 	** Login:amaro@mail.com
 	** senha: 123
+
+# Autor
+Jorge Amaro de Carvalho
 
 ## Algumas telas do app
 >
